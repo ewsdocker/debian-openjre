@@ -49,7 +49,7 @@ MAINTAINER Jay Wheeler <EarthWalkSoftware@gmail.com>
 ENV LMSBUILD_VERSION="0.1.0"
 ENV LMSBUILD_NAME=debian-openjre 
 ENV LMSBUILD_DOCKER="ewsdocker/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
-ENV LMSBUILD_PACKAGE="debian-base:3.0.5, OpenJDK v 8 JRE"
+ENV LMSBUILD_PACKAGE="debian-base-gui:3.0.5, OpenJDK-8-JRE"
 
 # =========================================================================
 
