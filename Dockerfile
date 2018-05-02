@@ -7,7 +7,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 2.1.0
+# @version 0.1.0
 # @copyright © 2017, 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-openjre
@@ -46,7 +46,7 @@ MAINTAINER Jay Wheeler <EarthWalkSoftware@gmail.com>
 
 # =========================================================================
 
-ENV LMSBUILD_VERSION="2.1.0"
+ENV LMSBUILD_VERSION="0.1.0"
 ENV LMSBUILD_NAME=debian-openjre 
 ENV LMSBUILD_DOCKER="ewsdocker/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
 ENV LMSBUILD_PACKAGE="debian-base:3.0.5, OpenJDK v 8 JRE"
