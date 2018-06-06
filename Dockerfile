@@ -7,7 +7,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 0.1.2
+# @version 0.1.3
 # @copyright © 2017, 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-openjre
@@ -40,16 +40,16 @@
 #   Install openjdk-8-jre from the Debian repository.
 #
 # =========================================================================
-FROM ewsdocker/debian-base-gui:3.0.7
+FROM ewsdocker/debian-base-gui:3.0.8
 
 MAINTAINER Jay Wheeler <EarthWalkSoftware@gmail.com>
 
 # =========================================================================
 
-ENV LMSBUILD_VERSION="0.1.2"
+ENV LMSBUILD_VERSION="0.1.3"
 ENV LMSBUILD_NAME=debian-openjre 
 ENV LMSBUILD_DOCKER="ewsdocker/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
-ENV LMSBUILD_PACKAGE="debian-base-gui:3.0.7, OpenJDK-8-JRE"
+ENV LMSBUILD_PACKAGE="debian-base-gui:3.0.8, OpenJDK-8-JRE"
 
 # =========================================================================
 
@@ -65,8 +65,14 @@ RUN apt-get -y update \
      libgtk2.0-common \
      openjdk-8-jre \
      openjdk-8-jre-headless \
- && apt-get clean all \
  && printf "${LMSBUILD_DOCKER} (${LMSBUILD_PACKAGE}), %s @ %s\n" `date '+%Y-%m-%d'` `date '+%H:%M:%S'` >> /etc/ewsdocker-builds.txt  
+
+# =========================================================================
+
+COPY scripts/. /
+
+RUN chmod 775 /usr/local/bin/* \
+ && chmod 600 /usr/local/share/applications/debian-openjre.desktop 
 
 # =========================================================================
 
