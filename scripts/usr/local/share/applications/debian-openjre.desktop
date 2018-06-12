@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 Exec=/home/jay/.local/bin/docker-deb-start-0.0.1 debian-openjre-0.1.3
-Icon=/home/jay/.local/share/icons/hicolor/16x16/apps/default.png
+Icon=/home/jay/.local/share/icons/openjdk-8.png
 Type=Application
 Terminal=true
 GenericName=Debian-Openjre
