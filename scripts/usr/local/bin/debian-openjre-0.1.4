@@ -2,7 +2,7 @@
 # =========================================================================
 # =========================================================================
 #
-#	debian-base-gui.run
+#	debian-openjre
 #	  docker run command for debian-base-gui
 #		in a Debian 9 docker image.
 #
@@ -12,17 +12,17 @@
 # @version 0.0.2
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
-# @package debian-base-gui
-# @subpackage debian-base-gui.run
+# @package debian-openjre
+# @subpackage debian-openjre
 #
 # =========================================================================
 #
 #	Copyright © 2018. EarthWalk Software
 #	Licensed under the GNU General Public License, GPL-3.0-or-later.
 #
-#   This file is part of ewsdocker/debian-base-gui.
+#   This file is part of ewsdocker/debian-openjre.
 #
-#   ewsdocker/debian-base-gui is free software: you can redistribute 
+#   ewsdocker/debian-openjre is free software: you can redistribute 
 #   it and/or modify it under the terms of the GNU General Public License 
 #   as published by the Free Software Foundation, either version 3 of the 
 #   License, or (at your option) any later version.
@@ -41,5 +41,7 @@
 docker run -v /etc/localtime:/etc/localtime:ro \
            -v ${HOME}/.config/docker/debian-openjre:/root \
            -v ${HOME}:/user \
+           -it \
+           --rm \
            --name=debian-openjre-0.1.4 \
-       ewsdocker/debian-openjre:0.1.4
+       ewsdocker/debian-openjre:0.1.4 /bin/bash
