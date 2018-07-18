@@ -18,15 +18,15 @@ ____
 Find out all that you need to know about the docker Tags, and the version of **ewsdocker/debian-openjre** represented, at [Docker Tags](https://github.com/ewsdocker/debian-openjre/wiki/DockerTags).  
 _____________________  
 
-**docker pull** will pull the **latest** image by default.  This image is based on the GitHub **master** source, which is the development version, and quite possibly **unstable**.  
+**docker pull** will pull the **latest** image by default.  
 
-The **stable** version is the most stable version of the most recent **Debian** version.  It may (most likely) not be the newest GitHub version.  
+This **edge** image is based on the GitHub **master** source, which is the development version, and quite possibly **unstable**.  
 
-NOTE: If the _New Version_ version number is not in the **Tags**, the **latest** tag is still under test.  Testing will be complete when the _New Version_ tag exists.
+NOTE: If the _New Version_ version number is not in the **Tags**, the **edge** tag is still under test.  Testing will be complete when the _New Version_ tag exists, and no **edge** tag for the _New Version_ no longer exists.
 
 Other Docker versions (or tags) can be selected on the Docker [Tags](https://hub.docker.com/r/ewsdocker/debian-openjre/tags/) page.  
 
-An explanation of the [Docker Tags](https://github.com/ewsdocker/debian-openjre/wiki/DockerTags) is available on the [ewsdocker/debian-nodejs Wiki](https://github.com/ewsdocker/debian-nodejs/wiki).
+An explanation of the [Docker Tags](https://github.com/ewsdocker/debian-openjre/wiki/DockerTags) is available on the [ewsdocker/debian-openjre Wiki](https://github.com/ewsdocker/debian-openjre/wiki).
 ____  
 
 **Copyright © 2018. EarthWalk Software.**  
