@@ -22,7 +22,7 @@ _____________________
 
 This **edge** image is based on the GitHub **master** source, which is the development version, and quite possibly **unstable**.  
 
-NOTE: If the _New Version_ version number is not in the **Tags**, the **edge** tag is still under test.  Testing will be complete when the _New Version_ tag exists, and no **edge** tag for the _New Version_ no longer exists.
+NOTE: If the _New Version_ version number is not in the **Tags**, the **edge** tag is still under test.  Testing will be complete when the _New Version_ tag exists, and an **edge** tag for the _New Version_ no longer exists.
 
 Other Docker versions (or tags) can be selected on the Docker [Tags](https://hub.docker.com/r/ewsdocker/debian-openjre/tags/) page.  
 
