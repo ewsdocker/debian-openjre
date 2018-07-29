@@ -9,7 +9,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 0.0.2
+# @version 0.0.3
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package debian-openjre
@@ -38,10 +38,10 @@
 #
 # =========================================================================
 
-docker run -v /etc/localtime:/etc/localtime:ro \
-           -v ${HOME}/.config/docker/debian-openjre:/root \
-           -v ${HOME}:/user \
-           -it \
+docker run -it \
            --rm \
-           --name=debian-openjre-0.1.4 \
-       ewsdocker/debian-openjre:0.1.4 /bin/bash
+           -v /etc/localtime:/etc/localtime:ro \
+           -v ${HOME}:/user \
+           -v ${HOME}/.config/docker/debian-openjre-9.5.2:/root \
+           --name=debian-openjre-9.5.2 \
+       ewsdocker/debian-openjre:9.5.2 /bin/bash
