@@ -7,7 +7,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 9.5.2
+# @version 9.5.3
 # @copyright © 2017, 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-openjre
@@ -40,19 +40,19 @@
 #   Install openjdk-8-jre from the Debian repository.
 #
 # =========================================================================
-FROM ewsdocker/debian-base-gui:9.5.0
+FROM ewsdocker/debian-base-gui:9.5.1
 
 MAINTAINER Jay Wheeler <EarthWalkSoftware@gmail.com>
 
 # =========================================================================
 
-ENV LMSBUILD_VERSION="9.5.2"
+ENV LMSBUILD_VERSION="9.5.3"
 ENV LMSBUILD_NAME=debian-openjre 
 ENV LMSBUILD_REPO=ewsdocker 
 ENV LMSBUILD_REGISTRY="" 
 
 ENV LMSBUILD_DOCKER="${LMSBUILD_REPO}/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
-ENV LMSBUILD_PACKAGE="debian-base-gui:9.5.0, OpenJDK-8-JRE"
+ENV LMSBUILD_PACKAGE="debian-base-gui:9.5.1, OpenJDK-8-JRE"
 
 # =========================================================================
 
@@ -75,7 +75,7 @@ RUN apt-get -y update \
 COPY scripts/. /
 
 RUN chmod 775 /usr/local/bin/* \
- && chmod 600 /usr/local/share/applications/debian-openjre.desktop 
+ && chmod 600 /usr/local/share/applications/debian-openjre-${LMSBUILD_VERSION}.desktop 
 
 # =========================================================================
 
