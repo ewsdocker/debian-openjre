@@ -42,7 +42,8 @@ ____
 
 **ewsdocker/debian-openjre:9.5.2**  
   
-    docker run -d \
+    docker run -it \
+               --rm \
                -v /etc/localtime:/etc/localtime:ro \
                -v ${HOME}/workspace-base-9.5.2:/workspace \
                -v ${HOME}/.config/docker/debian-openjre-9.5.2:/root \
