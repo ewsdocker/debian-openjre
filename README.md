@@ -15,16 +15,16 @@ The following scripts will download the selected **ewsdocker/debian-openjre** im
 
 The <i>default</i> values will install all directories and contents in the <b>docker host</b> user's home directory (refer to <a href="#mapping">Mapping docker host resources to the docker container</a>, below).  
 
-**ewsdocker/debian-openjre:9.5.2**
+**ewsdocker/debian-openjre:9.5.3**
   
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-openjre-9.5.2:/root \
-               --name=debian-openjre-9.5.2 \
-           ewsdocker/debian-openjre:9.5.2 lms-setup  
+               -v ${HOME}/.config/docker/debian-openjre-9.5.3:/root \
+               --name=debian-openjre-9.5.3 \
+           ewsdocker/debian-openjre:9.5.3 lms-setup  
 
 ____  
 
@@ -40,15 +40,15 @@ ____
 
 **Executable scripts**  
 
-**ewsdocker/debian-openjre:9.5.2**  
+**ewsdocker/debian-openjre:9.5.3**  
   
     docker run -it \
                --rm \
                -v /etc/localtime:/etc/localtime:ro \
-               -v ${HOME}/workspace-base-9.5.2:/workspace \
-               -v ${HOME}/.config/docker/debian-openjre-9.5.2:/root \
-               --name=debian-openjre-9.5.2 \
-           ewsdocker/debian-openjre:9.5.2
+               -v ${HOME}/workspace-base-9.5.3:/workspace \
+               -v ${HOME}/.config/docker/debian-openjre-9.5.3:/root \
+               --name=debian-openjre-9.5.3 \
+           ewsdocker/debian-openjre:9.5.3
 
 Refer to the **[Command-line Interface](https://github.com/ewsdocker/debian-openjre/wiki/CommandLineInterface) Wiki** page for details about how to connect to this container.
 
