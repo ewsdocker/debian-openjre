@@ -76,18 +76,12 @@ ENV LMSBUILD_PACKAGE="openjre-${OPENJDK_RELEASE}-${OPENJDK_VERS}"
 
 # =========================================================================
 
-RUN apt-get -y update \
- && apt-get -y upgrade \
- && cd /usr/local/share \
+RUN cd /usr/local/share \
  && wget ${OPENJDK_URL} \
  && tar xvf ${OPENJDK_PKG} \
- && apt-get -y install \
-            libgtk2.0-0 \
-            libgtk2.0-bin \
-            libgtk2.0-common \
-            libgtk-3-0 \
-            libgtk-3-bin \
-            libgtk-3-common \ 
+ && rm ${OPENJDK_PKG} \
+ && apt-get -y upgrade \
+ && apt-get -y update \
  && printf "${LMSBUILD_DOCKER} (${LMSBUILD_PACKAGE}), %s @ %s\n" `date '+%Y-%m-%d'` `date '+%H:%M:%S'` >> /etc/ewsdocker-builds.txt  
 
 # =========================================================================
