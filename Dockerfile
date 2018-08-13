@@ -10,7 +10,7 @@
 # @version 9.5.4
 # @copyright © 2017, 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
-# @package ewsdocker/debian-openjre
+# @package ewsdocker/debian-openjre:openjdk-8-jre
 # @subpackage Dockerfile
 #
 # =========================================================================
@@ -46,7 +46,7 @@ MAINTAINER Jay Wheeler <EarthWalkSoftware@gmail.com>
 
 # =========================================================================
 
-ENV LMSBUILD_VERSION="9.5.4"
+ENV LMSBUILD_VERSION="openjdk-8-jre-9.5.4"
 ENV LMSBUILD_NAME=debian-openjre 
 ENV LMSBUILD_REPO=ewsdocker 
 ENV LMSBUILD_REGISTRY="" 
