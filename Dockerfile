@@ -40,7 +40,7 @@
 #   Install openjdk-8-jre from the Debian repository.
 #
 # =========================================================================
-FROM ewsdocker/debian-base-gui:9.5.2
+FROM ewsdocker/debian-base-gui:9.5.1
 
 MAINTAINER Jay Wheeler <EarthWalkSoftware@gmail.com>
 
@@ -52,7 +52,7 @@ ENV LMSBUILD_REPO=ewsdocker
 ENV LMSBUILD_REGISTRY="" 
 
 ENV LMSBUILD_DOCKER="${LMSBUILD_REPO}/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
-ENV LMSBUILD_PACKAGE="debian-base-gui:9.5.2, OpenJDK-8-JRE"
+ENV LMSBUILD_PACKAGE="OpenJDK-8-JRE"
 
 # =========================================================================
 
