@@ -2,7 +2,7 @@
 # =========================================================================
 #
 #	Dockerfile
-#	  Dockerfile for OpenJDK-JRE in a Debian container.
+#	  Dockerfile for OpenJDK-10-jre in a Debian container.
 #
 # =========================================================================
 #
@@ -37,7 +37,7 @@
 # =========================================================================
 # =========================================================================
 #
-#   Install openjdk-8-jre from the Debian repository.
+#   Install openjdk-10-jre from jdk.java.net/10 .
 #
 # =========================================================================
 FROM ewsdocker/debian-base-gui:9.5.1
@@ -50,7 +50,10 @@ MAINTAINER Jay Wheeler <EarthWalkSoftware@gmail.com>
 #         as there is no way to specify them in the build 
 #         command.
 #
-# 	  OPENJDK repository address
+# 	  OPENJDK-10 website http://jdk.java.net/10/
+#
+#     repository address at 
+#        https://download.java.net/java/GA/jdk10/10.0.2/19aef61b38124481863b1413dce1855f/13/openjdk-10.0.2_linux-x64_bin.tar.gz
 #
 # =========================================================================
 ENV OPENJDK_RELEASE=jdk10 
@@ -66,7 +69,7 @@ ENV OPENJDK_URL="${OPENJDK_HOST}/${OPENJDK_PKG}"
  
 # =========================================================================
 
-ENV LMSBUILD_VERSION="9.5.4"
+ENV LMSBUILD_VERSION="10-jre-9.5.4"
 ENV LMSBUILD_NAME=debian-openjre
 ENV LMSBUILD_REPO=ewsdocker 
 ENV LMSBUILD_REGISTRY="" 
@@ -76,13 +79,17 @@ ENV LMSBUILD_PACKAGE="openjre-${OPENJDK_RELEASE}-${OPENJDK_VERS}"
 
 # =========================================================================
 
-RUN cd /usr/local/share \
+RUN apt-get -y upgrade \
+ && mkdir /usr/lib/jvm \
+ && cd /usr/lib/jvm \
  && wget ${OPENJDK_URL} \
  && tar xvf ${OPENJDK_PKG} \
  && rm ${OPENJDK_PKG} \
- && apt-get -y upgrade \
+ && ln -s /usr/lib/jvm/jdk-${OPENJDK_VERS}/bin/java /usr/bin/java \
+ && ln -s /usr/lib/jvm/jdk-${OPENJDK_VERS}/bin/java /etc/alternatives/java \
  && apt-get -y update \
  && printf "${LMSBUILD_DOCKER} (${LMSBUILD_PACKAGE}), %s @ %s\n" `date '+%Y-%m-%d'` `date '+%H:%M:%S'` >> /etc/ewsdocker-builds.txt  
+
 
 # =========================================================================
 
