@@ -7,7 +7,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 9.5.4
+# @version 9.5.5
 # @copyright © 2017, 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-openjre
@@ -40,7 +40,7 @@
 #   Install openjdk-10-jre from jdk.java.net/10 .
 #
 # =========================================================================
-FROM ewsdocker/debian-base-gui:9.5.1
+FROM ewsdocker/debian-base-gui:9.5.2
 
 MAINTAINER Jay Wheeler <EarthWalkSoftware@gmail.com>
 
@@ -69,7 +69,7 @@ ENV OPENJDK_URL="${OPENJDK_HOST}/${OPENJDK_PKG}"
  
 # =========================================================================
 
-ENV LMSBUILD_VERSION="10-jre-9.5.4"
+ENV LMSBUILD_VERSION="10-jre-9.5.5"
 ENV LMSBUILD_NAME=debian-openjre
 ENV LMSBUILD_REPO=ewsdocker 
 ENV LMSBUILD_REGISTRY="" 
@@ -81,14 +81,6 @@ ENV LMSBUILD_PACKAGE="openjre-${OPENJDK_RELEASE}-${OPENJDK_VERS}"
 
 RUN apt-get -y upgrade \
  && apt-get -y update \
- && apt-get -y install \
-     java-common \
-     libgtk2.0-bin \
-     libgtk-3-0 \
-     libgtk-3-bin \
-     libgtk-3-common \ 
-     libgtk2.0-0 \
-     libgtk2.0-common \
  && mkdir /usr/lib/jvm \
  && cd /usr/lib/jvm \
  && wget ${OPENJDK_URL} \
@@ -96,8 +88,19 @@ RUN apt-get -y upgrade \
  && rm ${OPENJDK_PKG} \
  && ln -s /usr/lib/jvm/jdk-${OPENJDK_VERS}/bin/java /usr/bin/java \
  && ln -s /usr/lib/jvm/jdk-${OPENJDK_VERS}/bin/java /etc/alternatives/java \
- && printf "${LMSBUILD_DOCKER} (${LMSBUILD_PACKAGE}), %s @ %s\n" `date '+%Y-%m-%d'` `date '+%H:%M:%S'` >> /etc/ewsdocker-builds.txt  
+ && printf "${LMSBUILD_DOCKER} (${LMSBUILD_PACKAGE}), %s @ %s\n" `date '+%Y-%m-%d'` `date '+%H:%M:%S'` >> /etc/ewsdocker-builds.txt \ 
+ && apt-get clean 
 
+# && apt-get -y install \
+#     java-common \
+# && 
+
+#     libgtk2.0-bin \
+#     libgtk-3-0 \
+#     libgtk-3-bin \
+#     libgtk-3-common \ 
+#     libgtk2.0-0 \
+#     libgtk2.0-common \
 
 # =========================================================================
 
