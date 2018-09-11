@@ -62,8 +62,8 @@ ENV OPENJDK_PKG="openjdk-${OPENJDK_VERS}_linux-x64_bin.tar.gz"
 
 ENV OPENJDK_PKG_DIR="${OPENJDK_RELEASE}/${OPENJDK_VERS}/19aef61b38124481863b1413dce1855f/13"
 
-#ENV OPENJDK_HOST=http://pkgnginx 
-ENV OPENJDK_HOST="https://download.java.net/java/GA/${OPENJDK_PKG_DIR}"
+ENV OPENJDK_HOST=http://pkgnginx 
+#ENV OPENJDK_HOST="https://download.java.net/java/GA/${OPENJDK_PKG_DIR}"
 
 ENV OPENJDK_URL="${OPENJDK_HOST}/${OPENJDK_PKG}"
  
@@ -81,6 +81,8 @@ ENV LMSBUILD_PACKAGE="openjre-${OPENJDK_RELEASE}-${OPENJDK_VERS}"
 
 RUN apt-get -y upgrade \
  && apt-get -y update \
+ && apt-get -y install \
+            java-common \
  && mkdir /usr/lib/jvm \
  && cd /usr/lib/jvm \
  && wget ${OPENJDK_URL} \
@@ -91,14 +93,11 @@ RUN apt-get -y upgrade \
  && printf "${LMSBUILD_DOCKER} (${LMSBUILD_PACKAGE}), %s @ %s\n" `date '+%Y-%m-%d'` `date '+%H:%M:%S'` >> /etc/ewsdocker-builds.txt \ 
  && apt-get clean 
 
-# && apt-get -y install \
-#     java-common \
-# && 
-
-#     libgtk2.0-bin \
 #     libgtk-3-0 \
 #     libgtk-3-bin \
 #     libgtk-3-common \ 
+
+#     libgtk2.0-bin \
 #     libgtk2.0-0 \
 #     libgtk2.0-common \
 
