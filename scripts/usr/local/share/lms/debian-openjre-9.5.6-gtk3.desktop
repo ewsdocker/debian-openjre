@@ -1,10 +1,10 @@
 [Desktop Entry]
 Encoding=UTF-8
-Exec=/home/jay/.local/bin/docker-deb-start-0.0.3 debian-openjre:9.5.6
+Exec=/home/jay/.local/bin/docker-deb-start-0.0.3 debian-openjre:9.5.6-gtk3
 Icon=/home/jay/.local/share/icons/openjdk-8.png
 Type=Application
 Terminal=true
-GenericName=Debian-Openjre 9.5.6
-Name=Debian-Openjre 9.5.6
+GenericName=Debian-Openjre 9.5.6-gtk3
+Name=Debian-Openjre 9.5.6-gtk3
 StartupNotify=false
 Categories=Development
