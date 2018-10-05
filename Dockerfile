@@ -62,8 +62,8 @@ ENV OPENJDK_PKG="openjdk-${OPENJDK_VERS}_linux-x64_bin.tar.gz"
 
 ENV OPENJDK_PKG_DIR="${OPENJDK_RELEASE}/${OPENJDK_VERS}/19aef61b38124481863b1413dce1855f/13"
 
-ENV OPENJDK_HOST=http://alpine-nginx-pkgcache 
-#ENV OPENJDK_HOST="https://download.java.net/java/GA/${OPENJDK_PKG_DIR}"
+#ENV OPENJDK_HOST=http://alpine-nginx-pkgcache 
+ENV OPENJDK_HOST="https://download.java.net/java/GA/${OPENJDK_PKG_DIR}"
 
 ENV OPENJDK_URL="${OPENJDK_HOST}/${OPENJDK_PKG}"
  
