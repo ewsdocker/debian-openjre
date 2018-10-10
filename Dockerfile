@@ -98,8 +98,7 @@ RUN apt-get -y upgrade \
 
 COPY scripts/. /
 
-RUN chmod 775 /usr/local/bin/* \
- && chmod 600 /usr/local/share/applications/debian-openjre-${LMSBUILD_VERSION}.desktop 
+RUN chmod 775 /usr/local/bin/* 
 
 # =========================================================================
 
