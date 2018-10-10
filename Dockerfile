@@ -7,7 +7,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 9.5.6
+# @version 9.5.7
 # @copyright © 2017, 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-openjre
@@ -40,7 +40,7 @@
 #   Install openjdk-10-jre from jdk.java.net/10 .
 #
 # =========================================================================
-FROM ewsdocker/debian-base-gui:9.5.3
+FROM ewsdocker/debian-base-gui:9.5.5
 
 MAINTAINER Jay Wheeler <EarthWalkSoftware@gmail.com>
 
@@ -69,12 +69,12 @@ ENV OPENJDK_URL="${OPENJDK_HOST}/${OPENJDK_PKG}"
  
 # =========================================================================
 
-ENV LMSBUILD_VERSION="9.5.6"
+ENV LMSBUILD_VERSION="9.5.7"
 ENV LMSBUILD_NAME=debian-openjre
 ENV LMSBUILD_REPO=ewsdocker 
 ENV LMSBUILD_REGISTRY="" 
 
-ENV LMSBUILD_PARENT="debian-base-gui:9.5.3"
+ENV LMSBUILD_PARENT="debian-base-gui:9.5.5"
 ENV LMSBUILD_DOCKER="${LMSBUILD_REPO}/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
 ENV LMSBUILD_PACKAGE="${LMSBUILD_PARENT}, openjre-${OPENJDK_RELEASE}-${OPENJDK_VERS}"
 
