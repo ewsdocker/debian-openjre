@@ -7,6 +7,11 @@ ____
 
 ____  
 
+#### What's new or changed in this version?  
+Version notes are available on the [ewsdocker wiki](https://github.com/ewsdocker/ewsdocker.github.io/wiki) at [notes-debian-openjre](https://github.com/ewsdocker/ewsdocker.github.io/wiki/notes-debian-openjre).  
+
+____  
+
 **Visit [ewsdocker/debian-openjre Wiki](https://github.com/ewsdocker/debian-openjre/wiki) for complete documentation of this docker image.**  
 ____  
 
