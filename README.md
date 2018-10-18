@@ -1,14 +1,14 @@
-### ewsdocker/debian-openjre:9.5.7
+### ewsdocker/debian-openjre:9.5.7 
+
 **ewsdocker/debian-openjre** is a **Debian** docker image containing the OpenJDK-jre version of Java.  
 ____  
 
-**openjdk-8-jre**  
-
-This is the **openjdk-8-jre** branch.  The latest version of **OpenJDK**, _openjdk-10-jre_ is available in the **master** branch.  
+**NOTE: ewsdocker/debian-openjre** is designed to be used on a Linux system configured to support **Docker** _user namespaces_.  Refer to [ewsdocker Containers and Docker User Namespaces](https://github.com/ewsdocker/ewsdocker.github.io/wiki/UserNS-Overview) for an overview and additional information.  
 
 ____  
 
-**NOTE: ewsdocker/debian-openjre** is designed to be used on a Linux system configured to support **Docker** _user namespaces_.  Refer to [ewsdocker Containers and Docker User Namespaces](https://github.com/ewsdocker/ewsdocker.github.io/wiki/UserNS-Overview) for an overview and additional information.  
+#### What's new or changed in this version?  
+Version notes are available on the [ewsdocker wiki](https://github.com/ewsdocker/ewsdocker.github.io/wiki) at [notes-debian-openjre](https://github.com/ewsdocker/ewsdocker.github.io/wiki/notes-debian-openjre).  
 
 ____  
 
@@ -17,20 +17,46 @@ ____
 
 **Installing ewsdocker/debian-openjre**  
 
-The following scripts will download the selected **ewsdocker/debian-openjre** image, create a container, setup and populate the directory structures, create the run-time scripts, and install the application's desktop file(s).  
+The following scripts will download the selected **ewsdocker/debian-openjre** image, create a container, setup and populate the directory structures, and create the run-time scripts.  
 
 The <i>default</i> values will install all directories and contents in the <b>docker host</b> user's home directory (refer to <a href="#mapping">Mapping docker host resources to the docker container</a>, below).  
 
-**ewsdocker/debian-openjre:openjdk-8-jre-9.5.7**
+**ewsdocker/debian-openjre:9.5.7**
   
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-openjre-openjdk-8-jre-9.5.7:/root \
-               --name=debian-openjre-openjdk-8-jre-9.5.7 \
-           ewsdocker/debian-openjre:openjdk-8-jre-9.5.7 lms-setup  
+               -v ${HOME}/.config/docker/debian-openjre-9.5.7:/root \
+               --name=debian-openjre-9.5.7\
+           ewsdocker/debian-openjre:9.5.7lms-setup  
+
+____  
+
+**ewsdocker/debian-openjre:9.5.7-gtk3**
+  
+    docker run --rm \
+               -v ${HOME}/bin:/userbin \
+               -v ${HOME}/.local:/usrlocal \
+               -e LMS_BASE="${HOME}/.local" \
+               -v ${HOME}/.config/docker:/conf \
+               -v ${HOME}/.config/docker/debian-openjre-9.5.7-gtk3:/root \
+               --name=debian-openjre-9.5.7-gtk3\
+           ewsdocker/debian-openjre:9.5.7-gtk3 lms-setup  
+
+____  
+
+**ewsdocker/debian-openjre:9.5.7-jre-8**
+  
+    docker run --rm \
+               -v ${HOME}/bin:/userbin \
+               -v ${HOME}/.local:/usrlocal \
+               -e LMS_BASE="${HOME}/.local" \
+               -v ${HOME}/.config/docker:/conf \
+               -v ${HOME}/.config/docker/debian-openjre-9.5.7-jre-8:/root \
+               --name=debian-openjre-9.5.7-jre-8\
+           ewsdocker/debian-openjre:9.5.7-jre-8 lms-setup  
 
 ____  
 
@@ -39,22 +65,47 @@ ____
 After running the above command script, and using the settings indicated, the docker host directories, mapped as shown in the above tables, will be configured as follows:
 
  - the executable scripts have been copied to **~/bin**;  
- - the application desktop file(s) have been copied to **~/.local/share/applications**, and are availablie in any _task bar_ menu;  
  - the associated **debian-openjre-"version"** executable script (shown below) will be found in **~/.local/bin**, and _should_ be customized with proper local volume names;  
 
 ____  
 
-**Executable scripts**  
+**Execution scripts**  
 
-**ewsdocker/debian-openjre:openjdk-8-jre-9.5.7**  
+**ewsdocker/debian-openjre:9.5.7**  
   
     docker run -it \
                --rm \
                -v /etc/localtime:/etc/localtime:ro \
-               -v ${HOME}/workspace-base-openjdk-8-jre-9.5.7:/workspace \
-               -v ${HOME}/.config/docker/debian-openjre-openjdk-8-jre-9.5.7:/root \
-               --name=debian-openjre-openjdk-8-jre-9.5.7 \
-           ewsdocker/debian-openjre:openjdk-8-jre-9.5.7
+               -v ${HOME}/workspace-openjre-9.5.7:/workspace \
+               -v ${HOME}/.config/docker/debian-openjre-9.5.7:/root \
+               --name=debian-openjre-9.5.7\
+           ewsdocker/debian-openjre:9.5.7
+
+____  
+
+**ewsdocker/debian-openjre:9.5.7-gtk3**  
+  
+    docker run -it \
+               --rm \
+               -v /etc/localtime:/etc/localtime:ro \
+               -v ${HOME}/workspace-openjre-9.5.7-gtk3:/workspace \
+               -v ${HOME}/.config/docker/debian-openjre-9.5.7-gtk3:/root \
+               --name=debian-openjre-9.5.7-gtk3\
+           ewsdocker/debian-openjre:9.5.7-gtk3
+
+____  
+
+**ewsdocker/debian-openjre:9.5.7-jre-8**  
+  
+    docker run -it \
+               --rm \
+               -v /etc/localtime:/etc/localtime:ro \
+               -v ${HOME}/workspace-openjre-9.5.7-jre-8:/workspace \
+               -v ${HOME}/.config/docker/debian-openjre-9.5.7-jre-8:/root \
+               --name=debian-openjre-9.5.7-jre-8\
+           ewsdocker/debian-openjre:9.5.7-jre-8
+
+____  
 
 Refer to the **[Command-line Interface](https://github.com/ewsdocker/debian-openjre/wiki/CommandLineInterface) Wiki** page for details about how to connect to this container.
 
