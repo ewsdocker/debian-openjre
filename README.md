@@ -1,4 +1,4 @@
-### ewsdocker/debian-openjre:9.5.8 
+### ewsdocker/debian-openjre:9.5.9 
 
 **ewsdocker/debian-openjre** is a **Debian** docker image containing the OpenJDK-jre version of Java.  
 ____  
@@ -21,42 +21,42 @@ The following scripts will download the selected **ewsdocker/debian-openjre** im
 
 The <i>default</i> values will install all directories and contents in the <b>docker host</b> user's home directory (refer to <a href="#mapping">Mapping docker host resources to the docker container</a>, below).  
 
-**ewsdocker/debian-openjre:9.5.8**
+**ewsdocker/debian-openjre:9.5.9**
   
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-openjre-9.5.8:/root \
-               --name=debian-openjre-9.5.8\
-           ewsdocker/debian-openjre:9.5.8 lms-setup  
+               -v ${HOME}/.config/docker/debian-openjre-9.5.9:/root \
+               --name=debian-openjre-9.5.9\
+           ewsdocker/debian-openjre:9.5.9 lms-setup  
 
 ____  
 
-**ewsdocker/debian-openjre:9.5.8-gtk3**
+**ewsdocker/debian-openjre:9.5.9-gtk3**
   
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-openjre-9.5.8-gtk3:/root \
-               --name=debian-openjre-9.5.8-gtk3\
-           ewsdocker/debian-openjre:9.5.8-gtk3 lms-setup  
+               -v ${HOME}/.config/docker/debian-openjre-9.5.9-gtk3:/root \
+               --name=debian-openjre-9.5.9-gtk3\
+           ewsdocker/debian-openjre:9.5.9-gtk3 lms-setup  
 
 ____  
 
-**ewsdocker/debian-openjre:9.5.8-jre-8**
+**ewsdocker/debian-openjre:9.5.9-jre-8**
   
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-openjre-9.5.8-jre-8:/root \
-               --name=debian-openjre-9.5.8-jre-8\
-           ewsdocker/debian-openjre:9.5.8-jre-8 lms-setup  
+               -v ${HOME}/.config/docker/debian-openjre-9.5.9-jre-8:/root \
+               --name=debian-openjre-9.5.9-jre-8\
+           ewsdocker/debian-openjre:9.5.9-jre-8 lms-setup  
 
 ____  
 
@@ -71,39 +71,39 @@ ____
 
 **Execution scripts**  
 
-**ewsdocker/debian-openjre:9.5.8**  
+**ewsdocker/debian-openjre:9.5.9**  
   
     docker run -it \
                --rm \
                -v /etc/localtime:/etc/localtime:ro \
-               -v ${HOME}/workspace-openjre-9.5.8:/workspace \
-               -v ${HOME}/.config/docker/debian-openjre-9.5.8:/root \
-               --name=debian-openjre-9.5.8\
-           ewsdocker/debian-openjre:9.5.8
+               -v ${HOME}/workspace-openjre-9.5.9:/workspace \
+               -v ${HOME}/.config/docker/debian-openjre-9.5.9:/root \
+               --name=debian-openjre-9.5.9\
+           ewsdocker/debian-openjre:9.5.9
 
 ____  
 
-**ewsdocker/debian-openjre:9.5.8-gtk3**  
+**ewsdocker/debian-openjre:9.5.9-gtk3**  
   
     docker run -it \
                --rm \
                -v /etc/localtime:/etc/localtime:ro \
-               -v ${HOME}/workspace-openjre-9.5.8-gtk3:/workspace \
-               -v ${HOME}/.config/docker/debian-openjre-9.5.8-gtk3:/root \
-               --name=debian-openjre-9.5.8-gtk3\
-           ewsdocker/debian-openjre:9.5.8-gtk3
+               -v ${HOME}/workspace-openjre-9.5.9-gtk3:/workspace \
+               -v ${HOME}/.config/docker/debian-openjre-9.5.9-gtk3:/root \
+               --name=debian-openjre-9.5.9-gtk3\
+           ewsdocker/debian-openjre:9.5.9-gtk3
 
 ____  
 
-**ewsdocker/debian-openjre:9.5.8-jre-8**  
+**ewsdocker/debian-openjre:9.5.9-jre-8**  
   
     docker run -it \
                --rm \
                -v /etc/localtime:/etc/localtime:ro \
-               -v ${HOME}/workspace-openjre-9.5.8-jre-8:/workspace \
-               -v ${HOME}/.config/docker/debian-openjre-9.5.8-jre-8:/root \
-               --name=debian-openjre-9.5.8-jre-8\
-           ewsdocker/debian-openjre:9.5.8-jre-8
+               -v ${HOME}/workspace-openjre-9.5.9-jre-8:/workspace \
+               -v ${HOME}/.config/docker/debian-openjre-9.5.9-jre-8:/root \
+               --name=debian-openjre-9.5.9-jre-8\
+           ewsdocker/debian-openjre:9.5.9-jre-8
 
 ____  
 
