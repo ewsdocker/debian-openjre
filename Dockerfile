@@ -40,7 +40,7 @@
 #   Install openjdk-10-jre from jdk.java.net/10 .
 #
 # =========================================================================
-FROM ewsdocker/debian-base-gui:9.5.6
+FROM ewsdocker/debian-kaptain:9.5.4
 
 MAINTAINER Jay Wheeler <EarthWalkSoftware@gmail.com>
 
@@ -74,7 +74,7 @@ ENV LMSBUILD_NAME=debian-openjre
 ENV LMSBUILD_REPO=ewsdocker 
 ENV LMSBUILD_REGISTRY="" 
 
-ENV LMSBUILD_PARENT="debian-base-gui:9.5.6"
+ENV LMSBUILD_PARENT="debian-kaptain:9.5.4"
 ENV LMSBUILD_DOCKER="${LMSBUILD_REPO}/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
 ENV LMSBUILD_PACKAGE="${LMSBUILD_PARENT}, openjre-${OPENJDK_RELEASE}-${OPENJDK_VERS}"
 
