@@ -84,6 +84,7 @@ RUN apt-get -y upgrade \
  && apt-get -y update \
  && apt-get -y install \
             java-common \
+ && apt-get clean all \
  && mkdir /usr/lib/jvm \
  && cd /usr/lib/jvm \
  && wget ${OPENJDK_URL} \
@@ -91,8 +92,7 @@ RUN apt-get -y upgrade \
  && rm ${OPENJDK_PKG} \
  && ln -s /usr/lib/jvm/jdk-${OPENJDK_VERS}/bin/java /usr/bin/java \
  && ln -s /usr/lib/jvm/jdk-${OPENJDK_VERS}/bin/java /etc/alternatives/java \
- && printf "${LMSBUILD_DOCKER} (${LMSBUILD_PACKAGE}), %s @ %s\n" `date '+%Y-%m-%d'` `date '+%H:%M:%S'` >> /etc/ewsdocker-builds.txt \ 
- && apt-get clean 
+ && printf "${LMSBUILD_DOCKER} (${LMSBUILD_PACKAGE}), %s @ %s\n" `date '+%Y-%m-%d'` `date '+%H:%M:%S'` >> /etc/ewsdocker-builds.txt 
 
 # =========================================================================
 
