@@ -7,7 +7,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 9.5.9-jre-8
+# @version 9.6.0-jre-8
 # @copyright © 2017, 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-openjre:openjdk-8-jre
@@ -40,18 +40,18 @@
 #   Install openjdk-8-jre from the Debian repository.
 #
 # =========================================================================
-FROM ewsdocker/debian-kaptain:9.5.4-gtk2
+FROM ewsdocker/debian-kaptain:9.6.0-gtk2
 
 MAINTAINER Jay Wheeler <EarthWalkSoftware@gmail.com>
 
 # =========================================================================
 
-ENV LMSBUILD_VERSION="9.5.9-jre-8"
+ENV LMSBUILD_VERSION="9.6.0-jre-8"
 ENV LMSBUILD_NAME=debian-openjre 
 ENV LMSBUILD_REPO=ewsdocker 
 ENV LMSBUILD_REGISTRY="" 
 
-ENV LMSBUILD_PARENT="debian-kaptain:9.5.4-gtk2"
+ENV LMSBUILD_PARENT="debian-kaptain:9.6.0-gtk2"
 ENV LMSBUILD_DOCKER="${LMSBUILD_REPO}/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
 ENV LMSBUILD_PACKAGE="${LMSBUILD_PARENT}, OpenJDK-8-JRE"
 
@@ -63,6 +63,7 @@ RUN apt-get -y update \
      java-common \
      openjdk-8-jre \
      openjdk-8-jre-headless \
+ && apt-get clean all \
  && printf "${LMSBUILD_DOCKER} (${LMSBUILD_PACKAGE}), %s @ %s\n" `date '+%Y-%m-%d'` `date '+%H:%M:%S'` >> /etc/ewsdocker-builds.txt  
 
 # =========================================================================
