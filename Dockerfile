@@ -7,7 +7,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 9.5.9
+# @version 9.6.0
 # @copyright © 2017, 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-openjre
@@ -40,7 +40,7 @@
 #   Install openjdk-10-jre from jdk.java.net/10 .
 #
 # =========================================================================
-FROM ewsdocker/debian-kaptain:9.5.4
+FROM ewsdocker/debian-kaptain:9.6.0
 
 MAINTAINER Jay Wheeler <EarthWalkSoftware@gmail.com>
 
@@ -69,12 +69,12 @@ ENV OPENJDK_URL="${OPENJDK_HOST}/${OPENJDK_PKG}"
  
 # =========================================================================
 
-ENV LMSBUILD_VERSION="9.5.9"
+ENV LMSBUILD_VERSION="9.6.0"
 ENV LMSBUILD_NAME=debian-openjre
 ENV LMSBUILD_REPO=ewsdocker 
 ENV LMSBUILD_REGISTRY="" 
 
-ENV LMSBUILD_PARENT="debian-kaptain:9.5.4"
+ENV LMSBUILD_PARENT="debian-kaptain:9.6.0"
 ENV LMSBUILD_DOCKER="${LMSBUILD_REPO}/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
 ENV LMSBUILD_PACKAGE="${LMSBUILD_PARENT}, openjre-${OPENJDK_RELEASE}-${OPENJDK_VERS}"
 
@@ -84,6 +84,7 @@ RUN apt-get -y upgrade \
  && apt-get -y update \
  && apt-get -y install \
             java-common \
+ && apt-get clean all \
  && mkdir /usr/lib/jvm \
  && cd /usr/lib/jvm \
  && wget ${OPENJDK_URL} \
@@ -91,9 +92,8 @@ RUN apt-get -y upgrade \
  && rm ${OPENJDK_PKG} \
  && ln -s /usr/lib/jvm/jdk-${OPENJDK_VERS}/bin/java /usr/bin/java \
  && ln -s /usr/lib/jvm/jdk-${OPENJDK_VERS}/bin/java /etc/alternatives/java \
- && printf "${LMSBUILD_DOCKER} (${LMSBUILD_PACKAGE}), %s @ %s\n" `date '+%Y-%m-%d'` `date '+%H:%M:%S'` >> /etc/ewsdocker-builds.txt \ 
- && apt-get clean 
-
+ && printf "${LMSBUILD_DOCKER} (${LMSBUILD_PACKAGE}), %s @ %s\n" `date '+%Y-%m-%d'` `date '+%H:%M:%S'` >> /etc/ewsdocker-builds.txt 
+ 
 # =========================================================================
 
 COPY scripts/. /
