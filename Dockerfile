@@ -8,14 +8,14 @@
 #
 # @author Jay Wheeler.
 # @version 9.6.0
-# @copyright © 2017, 2018. EarthWalk Software.
+# @copyright © 2017, 2018, 2019. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-openjre
 # @subpackage Dockerfile
 #
 # =========================================================================
 #
-#	Copyright © 2017, 2018. EarthWalk Software
+#	Copyright © 2017, 2018, 2019. EarthWalk Software
 #	Licensed under the GNU General Public License, GPL-3.0-or-later.
 #
 #   This file is part of ewsdocker/debian-openjre.
